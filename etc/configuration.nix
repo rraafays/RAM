@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  imports = [
+    ./MBP/configuration.nix
+  ];
+}
