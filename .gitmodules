@@ -4,3 +4,6 @@
 [submodule "modules/home"]
 	path = modules/home
 	url = https://github.com/rraafays/home.nix
+[submodule "modules/fonts"]
+	path = modules/fonts
+	url = https://github.com/rraafays/fonts.nix
