@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
   STATE_VERSION = "24.11";
@@ -31,11 +31,34 @@ in
     ./modules/darwin
   ];
 
-  environment.darwinConfig = "/etc/nix-darwin/configuration.nix";
+  networking.hostName = "AMBP";
+  programs.fish.enable = true;
+  environment = {
+    darwinConfig = "/etc/nix-darwin/configuration.nix";
+    shells = [ pkgs.fish ];
+  };
 
-  users.users.raf = {
-    name = "raf";
-    home = "/Users/raf";
+  users = {
+    knownUsers = [ USER ];
+    users.${USER} = {
+      name = USER;
+      home = "/Users/${USER}";
+      shell = pkgs.fish;
+      uid = 501;
+    };
+  };
+
+  homebrew = {
+    enable = true;
+    casks = [
+      "cursorcerer"
+      "docker"
+      "firefox"
+      "intellij-idea"
+      "karabiner-elements"
+      "spotify"
+      "whatsapp"
+    ];
   };
 
   system = {
