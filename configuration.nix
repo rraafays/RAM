@@ -63,8 +63,11 @@ in
 
   system = {
     stateVersion = DARWIN_STATE_VERSION;
-    activationScripts.dotfiles = {
-      text = ''
+    activationScripts = {
+      postUserActivation.text = ''
+        /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      '';
+      dotfiles.text = ''
         if [ -L /root/.config ]; then
             rm /root/.config
         elif [ -d /root/.config ]; then
