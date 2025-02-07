@@ -28,6 +28,7 @@ in
     ./modules/home
     ./modules/fonts
     ./modules/firefox
+    ./modules/darwin
   ];
 
   environment.darwinConfig = "/etc/nix-darwin/configuration.nix";

@@ -10,3 +10,6 @@
 [submodule "modules/firefox"]
 	path = modules/firefox
 	url = https://github.com/rraafays/firefox.nix
+[submodule "modules/darwin"]
+	path = modules/darwin
+	url = https://github.com/rraafays/darwin.nix
