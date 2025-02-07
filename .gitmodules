@@ -7,3 +7,6 @@
 [submodule "modules/fonts"]
 	path = modules/fonts
 	url = https://github.com/rraafays/fonts.nix
+[submodule "modules/firefox"]
+	path = modules/firefox
+	url = https://github.com/rraafays/firefox.nix
