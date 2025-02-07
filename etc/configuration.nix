@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./MBP/configuration.nix
+    ./AMBP/configuration.nix
   ];
 }

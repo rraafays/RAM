@@ -1,6 +1,6 @@
-# MBP
+# AMBP
 
-This repository, `MBP`, contains my Macbook Pro NixOS system configuration.
+This repository, `AMBP`, contains my Macbook Pro NixOS system configuration.
 The configuration is modular and designed for a single non-root user to maintain and use.
 
 ## Features
@@ -15,15 +15,15 @@ The configuration is modular and designed for a single non-root user to maintain
 Start by cloning the repository into your home directory:
 
 ```bash
-git clone --recurse-submodules https://github.com/yourusername/MBP.git ~/MBP
+git clone --recurse-submodules https://github.com/yourusername/AMBP.git ~/AMBP
 ```
 
 ### 2. create the symlink
 
-Next, create a symlink from the cloned repository to `/etc/nix-darwin/MBP`
+Next, create a symlink from the cloned repository to `/etc/nix-darwin/AMBP`
 
 ```bash
-sudo ln -s ~/MBP /etc/nix-darwin/MBP
+sudo ln -s ~/AMBP /etc/nix-darwin/AMBP
 ```
 
 ### 3. modify `configuration.nix`
@@ -38,7 +38,7 @@ to import the new configuration:
 {
   imports =
     [ 
-      ./MBP/configuration.nix
+      ./AMBP/configuration.nix
     ];
 
   # ... other configurations
