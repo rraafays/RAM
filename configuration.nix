@@ -32,10 +32,23 @@ in
 
   environment.darwinConfig = "/etc/nix-darwin/configuration.nix";
 
-  system.stateVersion = DARWIN_STATE_VERSION;
-
   users.users.raf = {
     name = "raf";
     home = "/Users/raf";
+  };
+
+  system = {
+    stateVersion = DARWIN_STATE_VERSION;
+    activationScripts.dotfiles = {
+      text = ''
+        if [ -L /root/.config ]; then
+            rm /root/.config
+        elif [ -d /root/.config ]; then
+            rm -rf /root/.config
+        fi
+        ln -s /home/${USER}/.config /root/.config
+        chown -R ${USER} /home/${USER}/.config
+      '';
+    };
   };
 }
