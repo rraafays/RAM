@@ -51,6 +51,7 @@ in
   homebrew = {
     enable = true;
     casks = [
+      "betterdisplay"
       "cursorcerer"
       "docker"
       "firefox"
