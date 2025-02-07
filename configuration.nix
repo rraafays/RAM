@@ -26,6 +26,7 @@ in
     ./modules/environment
     ./modules/home
     ./modules/fonts
+    ./modules/firefox
   ];
 
   users.users.raf = {
