@@ -60,6 +60,9 @@ in
       "spotify"
       "whatsapp"
     ];
+    brews = [
+      "detox"
+    ];
   };
 
   system = {
