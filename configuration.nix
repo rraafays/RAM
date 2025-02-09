@@ -58,6 +58,7 @@ in
       "intellij-idea"
       "karabiner-elements"
       "spotify"
+      "transmission"
       "whatsapp"
     ];
     brews = [
