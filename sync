@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+git submodule update --recursive --remote
+
 set initial_dir (pwd)
 for dir in modules/*/
     if test -d "$dir"
