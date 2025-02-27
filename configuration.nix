@@ -50,6 +50,7 @@ in
 
   homebrew = {
     enable = true;
+    onActivation.upgrade = true;
     casks = [
       "betterdisplay"
       "cursorcerer"
