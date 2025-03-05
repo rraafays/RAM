@@ -56,7 +56,6 @@ in
       "cursorcerer"
       "docker"
       "firefox"
-      "intellij-idea"
       "karabiner-elements"
       "spotify"
       "transmission"
