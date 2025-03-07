@@ -13,3 +13,6 @@
 [submodule "modules/darwin"]
 	path = modules/darwin
 	url = https://github.com/rraafays/darwin.nix
+[submodule "modules/work"]
+	path = modules/work
+	url = https://github.com/rraafays/work.nix

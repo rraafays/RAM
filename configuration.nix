@@ -29,6 +29,7 @@ in
     ./modules/fonts
     ./modules/firefox
     ./modules/darwin
+    ./modules/work
   ];
 
   networking.hostName = "AMBP";
@@ -44,7 +45,7 @@ in
       name = USER;
       home = "/Users/${USER}";
       shell = pkgs.fish;
-      uid = 501;
+      uid = 502;
     };
   };
 
