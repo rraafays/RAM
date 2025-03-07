@@ -55,7 +55,6 @@ in
     casks = [
       "betterdisplay"
       "cursorcerer"
-      "docker"
       "firefox"
       "karabiner-elements"
       "spotify"
