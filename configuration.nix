@@ -59,7 +59,6 @@ in
       "karabiner-elements"
       "spotify"
       "transmission"
-      "whatsapp"
     ];
     brews = [
       "detox"
