@@ -32,7 +32,7 @@ in
     ./modules/work
   ];
 
-  networking.hostName = "AMBP";
+  networking.hostName = "CORPO";
   programs.fish.enable = true;
   environment = {
     darwinConfig = "/etc/nix-darwin/configuration.nix";

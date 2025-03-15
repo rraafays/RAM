@@ -1,12 +1,6 @@
-# AMBP
+# CORPO
 
-This repository, `AMBP`, contains my Macbook Pro NixOS system configuration.
-The configuration is modular and designed for a single non-root user to maintain and use.
-
-## Features
-
-- **Modular Configuration**: uses git submodules stored under `./modules/`
-- **Rootless Editing**: designed for cloning, modification & maintenance by a non-root user
+work macbook pro nix configuration
 
 ## Installation & Setup
 
@@ -15,15 +9,15 @@ The configuration is modular and designed for a single non-root user to maintain
 Start by cloning the repository into your home directory:
 
 ```bash
-git clone --recurse-submodules https://github.com/yourusername/AMBP.git ~/AMBP
+git clone --recurse-submodules https://github.com/rraafays/CORPO ~/CORPO
 ```
 
 ### 2. create the symlink
 
-Next, create a symlink from the cloned repository to `/etc/nix-darwin/AMBP`
+Next, create a symlink from the cloned repository to `/etc/nix-darwin/CORPO`
 
 ```bash
-sudo ln -s ~/AMBP /etc/nix-darwin/AMBP
+sudo ln -s ~/CORPO /etc/nix-darwin/CORPO
 ```
 
 ### 3. modify `configuration.nix`
@@ -38,7 +32,7 @@ to import the new configuration:
 {
   imports =
     [ 
-      ./AMBP/configuration.nix
+      ./CORPO/configuration.nix
     ];
 
   # ... other configurations
