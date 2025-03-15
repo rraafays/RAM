@@ -2,98 +2,47 @@
 
 work macbook pro nix configuration
 
-## Installation & Setup
+## setup
 
-### 1. clone the repository
+### 1. install nix & brew
 
-Start by cloning the repository into your home directory:
+```bash
+curl -sSf -L https://install.lix.systems/lix | sh -s -- install
+```
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### 2. clone this config
 
 ```bash
 git clone --recurse-submodules https://github.com/rraafays/CORPO ~/CORPO
 ```
 
-### 2. create the symlink
-
-Next, create a symlink from the cloned repository to `/etc/nix-darwin/CORPO`
+### 2. link to `/etc`
 
 ```bash
 sudo ln -s ~/CORPO /etc/nix-darwin/CORPO
 ```
 
-### 3. modify `configuration.nix`
-
-You will need to modify the existing configuration.nix located in `/etc/nix-darwin/`, 
-to import the new configuration:
-
-```nix
-# /etc/nix-darwin/configuration.nix
-{ config, pkgs, ... }:
-
-{
-  imports =
-    [ 
-      ./CORPO/configuration.nix
-    ];
-
-  # ... other configurations
-}
-```
-
-### 4. apply the configuration
-
-Finally, apply the configuration
+### 3. copy `configuration.nix`
 
 ```bash
-sudo darwin-rebuild switch
+sudo cp ./etc/configuration.nix /etc/nix-darwin/configuration.nix
 ```
 
-### 5. switch user nixpkgs to unstable
+### 4. switch channels to unstable
+
 ```bash
+sudo nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
+sudo nix-channel --update
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
 ```
 
-## Managing Git Submodules
-
-The repository uses Git submodules to manage external configurations and dependencies.
-Below are some common operations for managing these submodules.
-
-### 1. cloning modules
-
-If you haven't already cloned the repository with submodules, you can initialise
-and update them after cloning:
+### 5. run first install
 
 ```bash
-git submodule update --init --recursive
+nix-build '<darwin>' -A darwin-rebuild
+./result/bin/darwin-rebuild switch -I darwin-config=/etc/nix-darwin/configuration.nix
 ```
-
-### 2. updating modules
-
-To update all submodules to the latest commit on their respective branches:
-
-```bash
-git submodule update --remote --merge
-```
-
-### 3. adding modules
-
-If you need to add a new module:
-
-```bash
-git submodule add <repository_url> modules/<module_name>
-```
-
-### 4. removing modules
-
-To remove a module:
-
-1. remove the relevant line from `.gitmodules`
-2. remove the module's entry in .git/config
-3. delete the module's directory
-4. run `git rm --cached` on the submodule directory 
-
-## Managing Nix Channels
-
-Nix channels are collections of Nix packages that can be used to manage and update software. To work with nix-channel, you can use commands such as `nix-channel --add <url>` to add a channel and `nix-channel --update` to update the packages.
-
-Having different Nix channels for the root user and a normal user is useful because it separates the system-wide configurations from user-specific ones. This ensures that system updates do not interfere with the user's development environment and vice versa, providing an extra layer of stability and security.

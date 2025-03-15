@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./AMBP/configuration.nix
-  ];
+  imports = [ ./CORPO/configuration.nix ];
 }
