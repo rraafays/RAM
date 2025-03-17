@@ -48,22 +48,6 @@ in
     };
   };
 
-  homebrew = {
-    enable = true;
-    onActivation.upgrade = true;
-    casks = [
-      "betterdisplay"
-      "cursorcerer"
-      "firefox"
-      "karabiner-elements"
-      "spotify"
-      "transmission"
-    ];
-    brews = [
-      "detox"
-    ];
-  };
-
   system = {
     stateVersion = DARWIN_STATE_VERSION;
     activationScripts = {
