@@ -27,7 +27,6 @@ in
     ./modules/environment
     ./modules/home
     ./modules/fonts
-    ./modules/firefox
     ./modules/darwin
     ./modules/work
   ];
