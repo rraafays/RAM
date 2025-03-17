@@ -24,10 +24,11 @@ in
 
   imports = [
     "${home-manager}/nix-darwin"
-    ./modules/environment
-    ./modules/home
-    ./modules/fonts
+    ./modules/brew
     ./modules/darwin
+    ./modules/environment
+    ./modules/fonts
+    ./modules/home
     ./modules/work
   ];
 

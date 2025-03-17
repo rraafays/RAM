@@ -13,3 +13,6 @@
 [submodule "modules/work"]
 	path = modules/work
 	url = https://github.com/rraafays/work.nix
+[submodule "modules/brew"]
+	path = modules/brew
+	url = https://github.com/rraafays/brew.nix
