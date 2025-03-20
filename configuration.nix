@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   STATE_VERSION = "24.11";
@@ -30,10 +30,16 @@ in
     ./modules/fonts
     ./modules/home
     ./modules/work
+    ./modules/neovim
   ];
 
   networking.hostName = "CORPO";
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellInit = ''set -x LIBRARY_PATH (string join ' ' $LIBRARY_PATH ${
+      lib.makeLibraryPath [ pkgs.libiconv ]
+    })'';
+  };
   environment = {
     darwinConfig = "/etc/nix-darwin/configuration.nix";
     shells = [ pkgs.fish ];

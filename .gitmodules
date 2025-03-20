@@ -16,3 +16,6 @@
 [submodule "modules/brew"]
 	path = modules/brew
 	url = https://github.com/rraafays/brew.nix
+[submodule "modules/neovim"]
+	path = modules/neovim
+	url = https://github.com/rraafays/neovim.nix
