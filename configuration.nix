@@ -24,13 +24,14 @@ in
 
   imports = [
     "${home-manager}/nix-darwin"
+    ./modules/aerospace
     ./modules/brew
     ./modules/darwin
     ./modules/environment
     ./modules/fonts
     ./modules/home
-    ./modules/work
     ./modules/neovim
+    ./modules/work
   ];
 
   networking.hostName = "CORPO";

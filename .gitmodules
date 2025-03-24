@@ -19,3 +19,6 @@
 [submodule "modules/neovim"]
 	path = modules/neovim
 	url = https://github.com/rraafays/neovim.nix
+[submodule "modules/aerospace"]
+	path = modules/aerospace
+	url = https://github.com/rraafays/aerospace.nix
