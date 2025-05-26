@@ -1,5 +1,0 @@
-{ ... }:
-
-{
-  imports = [ ./CORPO/configuration.nix ];
-}
