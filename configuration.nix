@@ -22,6 +22,7 @@ in
     config.allowUnfree = true;
   };
 
+
   system = {
     stateVersion = DARWIN_STATE_VERSION;
     primaryUser = USER;
