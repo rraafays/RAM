@@ -11,7 +11,6 @@ in
     ./modules/brew
     ./modules/environment
     ./modules/fonts
-    ./modules/neovim
     ./modules/work
   ];
 
