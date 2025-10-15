@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-brew upgrade
-sudo nix-channel --update
-sudo darwin-rebuild switch --verbose

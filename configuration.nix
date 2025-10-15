@@ -6,21 +6,19 @@ let
 in
 {
   imports = [
-    ./modules/aerospace
-    ./modules/darwin
-    ./modules/brew
-    ./modules/environment
-    ./modules/fonts
-    ./modules/work
+    ./src/aerospace.nix
+    ./src/brew.nix
+    ./src/environment.nix
+    ./src/fonts.nix
+    ./src/system.nix
   ];
 
-  networking.hostName = "CORPO";
+  networking.hostName = "RAM";
 
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
     config.allowUnfree = true;
   };
-
 
   system = {
     stateVersion = DARWIN_STATE_VERSION;
@@ -29,7 +27,10 @@ in
 
   programs.fish.enable = true;
   users = {
-    knownUsers = [ USER "root" ];
+    knownUsers = [
+      USER
+      "root"
+    ];
     users = {
       root = {
         shell = pkgs.fish;
@@ -39,7 +40,7 @@ in
         name = USER;
         home = "/Users/${USER}";
         shell = pkgs.fish;
-        uid = 502;
+        uid = 501;
         packages = with pkgs; [
           (writeShellScriptBin "su" ''
             #!${stdenv.shell}
@@ -49,17 +50,29 @@ in
           android-tools
           bandwhich
           hyperfine
-          mpv
+          kitty
           sacad
           spotdl
           sptlrx
           substudy
           yt-dlp-light
           zathura
-          awscli2
-          jira-cli-go
+
+          nodePackages_latest.nodejs
         ];
       };
     };
+  };
+
+  homebrew = {
+    enable = true;
+    onActivation.upgrade = true;
+    casks = [
+      "docker-desktop"
+      "google-chrome"
+      "intellij-idea"
+      "microsoft-teams"
+      "postman"
+    ];
   };
 }
