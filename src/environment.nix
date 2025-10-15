@@ -20,6 +20,7 @@
         gh
         git
         killall
+        kitty
         lf
         lsd
         mprocs
@@ -37,12 +38,18 @@
         stylua
         substudy
         tmux
+        tree-sitter
         unrar
         unzip
         uutils-coreutils-noprefix
         wget
         zk
         zoxide
+
+        (writeShellScriptBin "su" ''
+          #!${stdenv.shell}
+          /usr/bin/sudo /usr/bin/su "$@"
+        '')
 
         (writeShellScriptBin "sudoedit" ''
           #!${stdenv.shell}

@@ -42,22 +42,6 @@ in
         shell = pkgs.fish;
         uid = 502;
         packages = with pkgs; [
-          (writeShellScriptBin "su" ''
-            #!${stdenv.shell}
-            /usr/bin/sudo /usr/bin/su "$@"
-          '')
-          adbfs-rootless
-          android-tools
-          bandwhich
-          hyperfine
-          kitty
-          sacad
-          spotdl
-          sptlrx
-          substudy
-          yt-dlp-light
-          zathura
-
           nodePackages_latest.nodejs
         ];
       };
