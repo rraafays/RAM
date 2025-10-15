@@ -40,7 +40,7 @@ in
         name = USER;
         home = "/Users/${USER}";
         shell = pkgs.fish;
-        uid = 501;
+        uid = 502;
         packages = with pkgs; [
           (writeShellScriptBin "su" ''
             #!${stdenv.shell}
